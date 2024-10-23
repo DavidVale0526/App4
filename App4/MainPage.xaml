@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.MainPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#191970" Offset="0.0" />
+            <GradientStop Color="#2A2A4A" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <StackLayout Padding="30,0" 
+                 VerticalOptions="Center">
+
+        <Image Source="logoo.png"
+               HeightRequest="100"
+               Margin="0,0,0,50"/>
+
+        <Label Text="Bienvenidos!"
+               TextColor="White"
+               FontSize="36"
+               HorizontalOptions="Center"/>
+
+        <Label Text="¡Tu app de ensueños te espera!"
+               TextColor="LightGray"
+               FontSize="16"
+               HorizontalOptions="Center"
+               Margin="0,0,0,30"/>
+
+        <Frame BackgroundColor="#2A2A4A" 
+               Padding="0" 
+               CornerRadius="30">
+            <Entry Placeholder="Usuario"
+                   x:Name="emailEntry"
+                   PlaceholderColor="Gray"
+                   TextColor="White"
+                   Margin="15,0"/>
+        </Frame>
+
+        <Frame BackgroundColor="#2A2A4A" 
+               Padding="0" 
+               CornerRadius="30"
+               Margin="0,15,0,0">
+            <Entry Placeholder="Contraseña"
+                   x:Name="passwordEntry"
+                   PlaceholderColor="Gray"
+                   TextColor="White"
+                   IsPassword="True"
+                   Margin="15,0"/>
+        </Frame>
+        
+        <!--boton para ir a la pagina de Register-->
+        <Button Text="Registrarse"
+                BackgroundColor="#FF6B6B"
+                TextColor="White"
+                CornerRadius="30"
+                Margin="0,30,0,0"
+                Clicked="IrCrearUsuario"/>
+
+
+        <Button Text="Entrar"
+                BackgroundColor="#FF6B6B"
+                TextColor="White"
+                CornerRadius="30"
+                Margin="0,30,0,0"
+                Clicked="LoginButton_Clicked"/>
+
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="Center"
+                     Margin="0,15,0,0">
+            <Label Text="Crear cuenta"
+                   TextColor="White"/>
+            <Label Text="Recuperar contraseña"
+                   TextColor="White"
+                   Margin="20,0,0,0"/>
+        </StackLayout>
+
+        <Frame BackgroundColor="Transparent"
+               BorderColor="#FF1493"
+               Padding="10"
+               CornerRadius="30"
+               Margin="0,30,0,0">
+            <Label Text="Entrar con Google"
+                   TextColor="#FF1493"
+                   HorizontalOptions="Center"/>
+        </Frame>
+        
+        <!--crear usuario-->
+       
+
+    </StackLayout>
+</ContentPage>
+

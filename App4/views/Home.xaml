@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.views.Home"
+             Title="Home">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Wheat" Offset="0.0" />
+            <GradientStop Color="White" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <!-- Header -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="TuNegocio" 
+                       FontSize="24" 
+                       FontAttributes="Bold" 
+                       VerticalOptions="Center"/>
+                <Image Grid.Column="1" 
+                       Source="settings_icon.png" 
+                       HeightRequest="24" 
+                       WidthRequest="24"/>
+            </Grid>
+
+            <!-- Clients and Suppliers Cards -->
+            <Grid ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Total Clients Card -->
+                <Frame Grid.Column="0" BackgroundColor="White" CornerRadius="10" Padding="15">
+                    <VerticalStackLayout>
+                        <Image Source="clients_icon.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Label Text="Total Clients" FontSize="18" Margin="0,10,0,5"/>
+                        <Label Text="125" FontSize="24" FontAttributes="Bold" TextColor="#4A4A4A"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Total Suppliers Card -->
+                <Frame Grid.Column="1" BackgroundColor="White" CornerRadius="10" Padding="15">
+                    <VerticalStackLayout>
+                        <Image Source="suppliers_icon.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start"/>
+                        <Label Text="Total Suppliers" FontSize="18" Margin="0,10,0,5"/>
+                        <Label Text="78" FontSize="24" FontAttributes="Bold" TextColor="#4A4A4A"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Total Income Chart -->
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="15">
+                <VerticalStackLayout>
+                    <Grid>
+                        <Label Text="Total Income" FontSize="28" TextColor="Black" VerticalOptions="Center"/>
+                        <Image Source="chart_icon.png" HeightRequest="24" WidthRequest="54" HorizontalOptions="End"/>
+                    </Grid>
+                    <!-- Placeholder for the actual chart -->
+                    <BoxView HeightRequest="150" Color="#E0E0E0" Margin="0,10,0,0"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Bottom Buttons -->
+            <Button Text="View Financial Charts" BackgroundColor="#D0D0D0" TextColor="Black"/>
+            <Button Text="Add New Data" BackgroundColor="#D0D0D0" TextColor="Black"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
