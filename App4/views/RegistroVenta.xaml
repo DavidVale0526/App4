@@ -4,11 +4,16 @@
              x:Class="App4.views.RegistroVenta"
              Title="RegistroVenta"
              BackgroundColor="White">
-    <StackLayout Padding="20">
-        <Label Text="Registro de Venta" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
-        <Entry Placeholder="Nombre del producto" PlaceholderColor="Gray"/>
-        <Entry Placeholder="Cantidad" PlaceholderColor="Gray"/>
-        <Entry Placeholder="Precio" PlaceholderColor="Gray"/>
-        <Button Text="Registrar" BackgroundColor="#8A2BE2" TextColor="White" CornerRadius="5"/>
+    <StackLayout Padding="10">
+        <Label Text="Nombre del Producto"/>
+        <Entry x:Name="nombreProductoEntry" Placeholder="Nombre del producto"/>
+
+        <Label Text="Cantidad"/>
+        <Entry x:Name="cantidadEntry" Placeholder="Cantidad" Keyboard="Numeric"/>
+
+        <Label Text="Precio"/>
+        <Entry x:Name="precioEntry" Placeholder="Precio" Keyboard="Numeric"/>
+
+        <Button Text="Enviar" Clicked="BtnEnviar_Clicked"/>
     </StackLayout>
 </ContentPage>
