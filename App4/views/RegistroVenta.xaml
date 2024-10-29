@@ -14,6 +14,11 @@
         <Label Text="Precio"/>
         <Entry x:Name="precioEntry" Placeholder="Precio" Keyboard="Numeric"/>
 
+        <Label Text="Fecha"/>
+        <Label x:Name="fechaLabel" Text="Fecha de la venta"/>
+
+       
+
         <Button Text="Enviar" Clicked="BtnEnviar_Clicked"/>
     </StackLayout>
 </ContentPage>

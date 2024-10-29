@@ -23,7 +23,8 @@ public partial class RegistroVenta : ContentPage
         {
             NombreProducto = nombreProducto,
             Cantidad = cantidad,
-            Precio = precio
+            Precio = precio,
+            Fecha = DateTime.Now.ToString("dd/MM/yyyy HH:mm")
         };
 
         await firebaseClient
@@ -31,6 +32,7 @@ public partial class RegistroVenta : ContentPage
             .PostAsync(JsonConvert.SerializeObject(sales));
 
         await DisplayAlert("Mensaje", "Datos enviados correctamente", "OK");
+        await Navigation.PopAsync();
     }
 
     private async void BtnEnviar_Clicked(object sender, EventArgs e)
@@ -40,7 +42,7 @@ public partial class RegistroVenta : ContentPage
         string cantidadText = cantidadEntry.Text;
         string precioText = precioEntry.Text;
 
-        // Validar que los campos no estén vacíos
+        // Validar que los campos no están vacíos
         if (string.IsNullOrWhiteSpace(nombreProducto) || string.IsNullOrWhiteSpace(cantidadText) || string.IsNullOrWhiteSpace(precioText))
         {
             await DisplayAlert("Error", "Todos los campos son obligatorios", "OK");
