@@ -44,4 +44,32 @@ public partial class Venta : ContentPage
     {
         await Navigation.PushAsync(new RegistroVenta());
     }
+
+    //menu para navega entre las principales Opciones
+
+    public async void OnVentasTapped(object sender, EventArgs e)
+    {
+        // Navegar a la página de Ventas
+        await Navigation.PushAsync(new Venta());
+    }
+
+    public async void OnClientesTapped(object sender, EventArgs e)
+    {
+        // Navegar a la página de Clientes
+        await Navigation.PushAsync(new Cliente());
+    }
+
+    public async void OnProveedoresTapped(object sender, EventArgs e)
+    {
+        // Navegar a la página de Proveedores
+        await Navigation.PushAsync(new Proveedor());
+    }
+
+    public async void OnConfiguracionTapped(object sender, EventArgs e)
+    {
+        // Navegar a la página de Productos
+        await Navigation.PushAsync(new Configuracion());
+    }
+
+
 }

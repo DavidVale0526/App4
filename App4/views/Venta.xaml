@@ -59,19 +59,19 @@
 
         <!-- Bottom Navigation -->
         <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*" BackgroundColor="#F8F8F8" Padding="0,10">
-            <StackLayout Grid.Column="0" HorizontalOptions="Center">
+            <StackLayout Grid.Column="0" HorizontalOptions="Center" GestureRecognizers="{TapGestureRecognizer Tapped='OnVentasTapped'}">
                 <Image Source="sales_icon.png" WidthRequest="24" HeightRequest="24"/>
                 <Label Text="Ventas" FontSize="12" TextColor="Black"/>
             </StackLayout>
-            <StackLayout Grid.Column="1" HorizontalOptions="Center">
+            <StackLayout Grid.Column="1" HorizontalOptions="Center" GestureRecognizers="{TapGestureRecognizer Tapped='OnClientesTapped'}">
                 <Image Source="clientes.png" WidthRequest="24" HeightRequest="24"/>
                 <Label Text="Clientes" FontSize="12" TextColor="Black"/>
             </StackLayout>
-            <StackLayout Grid.Column="2" HorizontalOptions="Center">
+            <StackLayout Grid.Column="2" HorizontalOptions="Center" GestureRecognizers="{TapGestureRecognizer Tapped='OnProveedoresTapped'}">
                 <Image Source="providers.png" WidthRequest="24" HeightRequest="24"/>
                 <Label Text="Proveedores" FontSize="12" TextColor="Black"/>
             </StackLayout>
-            <StackLayout Grid.Column="3" HorizontalOptions="Center">
+            <StackLayout Grid.Column="3" HorizontalOptions="Center" GestureRecognizers="{TapGestureRecognizer Tapped='OnConfiguracionTapped'}">
                 <Image Source="config_icon.png" WidthRequest="24" HeightRequest="24"/>
                 <Label Text="Configuración" FontSize="12" TextColor="Black"/>
             </StackLayout>
