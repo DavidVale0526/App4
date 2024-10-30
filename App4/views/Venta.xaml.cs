@@ -17,7 +17,7 @@ public partial class Venta : ContentPage
         InitializeComponent();
         firebaseClient = new FirebaseClient(firebaseURL);
         salesList = new ObservableCollection<Sales>();
-        salesCollectionView.ItemsSource = salesList;
+        salesCollectionView.ItemsSource = salesList; // Asegúrate de que esto esté configurado
     }
 
     protected override async void OnAppearing()
@@ -36,6 +36,7 @@ public partial class Venta : ContentPage
         foreach (var sale in sales)
         {
             var saleData = JsonConvert.DeserializeObject<Sales>(sale.Object.ToString());
+            saleData.Id = sale.Key;
             salesList.Add(saleData);
         }
     }
@@ -44,8 +45,6 @@ public partial class Venta : ContentPage
     {
         await Navigation.PushAsync(new RegistroVenta());
     }
-
-    //menu para navega entre las principales Opciones
 
     public async void OnVentasTapped(object sender, EventArgs e)
     {
@@ -67,9 +66,13 @@ public partial class Venta : ContentPage
 
     public async void OnConfiguracionTapped(object sender, EventArgs e)
     {
-        // Navegar a la página de Productos
+        // Navegar a la página de Configuración
         await Navigation.PushAsync(new Configuracion());
     }
 
-
+    private async void OnSaleTapped(object sender, EventArgs e)
+    {
+        var sale = (Sales)((TappedEventArgs)e).Parameter; // Obtener la venta seleccionada
+        await Navigation.PushAsync(new EditarVenta(sale)); // Navegar a la página de edición
+    }
 }

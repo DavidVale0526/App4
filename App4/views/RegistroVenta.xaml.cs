@@ -21,6 +21,7 @@ public partial class RegistroVenta : ContentPage
 
         var sales = new Sales
         {
+            Id = Guid.NewGuid().ToString(),
             NombreProducto = nombreProducto,
             Cantidad = cantidad,
             Precio = precio,

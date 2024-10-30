@@ -49,6 +49,10 @@
                                             <Label Text="{Binding Fecha}" FontSize="12" TextColor="Gray"/>
                                         </StackLayout>
                                     </Grid>
+                                    <!-- Agregar GestureRecognizer aquí -->
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnSaleTapped" CommandParameter="{Binding .}"/>
+                                    </Frame.GestureRecognizers>
                                 </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
