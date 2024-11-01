@@ -4,8 +4,8 @@
              x:Class="App4.MainPage">
     <ContentPage.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#191970" Offset="0.0" />
-            <GradientStop Color="#2A2A4A" Offset="1.0" />
+            <GradientStop Color="#FF8383AC" Offset="0.0" />
+            <GradientStop Color="#FF909099" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -58,12 +58,19 @@
                 Clicked="IrCrearUsuario"/>
 
 
-        <Button Text="Entrar"
+        <Button x:Name="loginButton"
+                Text="Entrar"
                 BackgroundColor="#FF6B6B"
                 TextColor="White"
                 CornerRadius="30"
                 Margin="0,30,0,0"
                 Clicked="LoginButton_Clicked"/>
+
+        <ActivityIndicator x:Name="loadingIndicator"
+                           IsVisible="False"
+                           IsRunning="False"
+                           Color="White"
+                           Margin="0,10,0,0" />
 
         <StackLayout Orientation="Horizontal" 
                      HorizontalOptions="Center"
