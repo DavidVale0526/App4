@@ -1,12 +1,24 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App4.views.Cliente"
-             Title="Cliente">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Registrar Cliente"
+             BackgroundColor="White">
+    <StackLayout Padding="20">
+        <Label Text="Registrar Cliente" FontSize="24" HorizontalOptions="Center" />
+
+        <Frame BackgroundColor="#FFF0F5" CornerRadius="10" Padding="20">
+            <Grid ColumnDefinitions="*,Auto">
+                <StackLayout Grid.Column="0" Spacing="10">
+                    <Label Text="Datos del Cliente" TextColor="#8A2BE2" FontSize="18" FontAttributes="Bold"/>
+                    <Entry x:Name="nombreEntry" Placeholder="Nombre" TextColor="Black"/>
+                    <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email" TextColor="Black"/>
+                    <Entry x:Name="telefonoEntry" Placeholder="Teléfono" Keyboard="Telephone" TextColor="Black"/>
+                </StackLayout>
+                <Image Grid.Column="1" Source="cliente_icon.png" WidthRequest="50" HeightRequest="50"/>
+            </Grid>
+        </Frame>
+
+        <Button Text="Agregar Cliente" BackgroundColor="#8A2BE2" TextColor="White" CornerRadius="5" Clicked="OnAgregarClienteClicked"/>
+    </StackLayout>
 </ContentPage>

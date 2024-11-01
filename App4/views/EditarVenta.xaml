@@ -6,13 +6,13 @@
              BackgroundColor="White">
     <StackLayout Padding="10">
         <Label Text="Nombre del Producto"/>
-        <Entry x:Name="nombreProductoEntry" Placeholder="Nombre del producto"/>
+        <Entry x:Name="nombreProductoEntry" Placeholder="Nombre del producto" TextColor="Black"/>
 
         <Label Text="Cantidad"/>
-        <Entry x:Name="cantidadEntry" Placeholder="Cantidad" Keyboard="Numeric"/>
+        <Entry x:Name="cantidadEntry" Placeholder="Cantidad" Keyboard="Numeric" TextColor="Black"/>
 
         <Label Text="Precio"/>
-        <Entry x:Name="precioEntry" Placeholder="Precio" Keyboard="Numeric"/>
+        <Entry x:Name="precioEntry" Placeholder="Precio" Keyboard="Numeric" TextColor="Black"/>
 
         <Button Text="Actualizar" Clicked="BtnActualizar_Clicked"/>
         <Button Text="Eliminar" Clicked="BtnEliminar_Clicked" BackgroundColor="Red" TextColor="White"/>
