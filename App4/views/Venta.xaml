@@ -18,7 +18,7 @@
             <StackLayout Padding="20,0,20,20" Spacing="20">
                 <!-- Search Bar -->
                 <Frame CornerRadius="10" Padding="15,0" BackgroundColor="#F5F5F5">
-                    <Entry Placeholder="Buscar venta" PlaceholderColor="Gray"/>
+                    <Entry Placeholder="Buscar venta" PlaceholderColor="Gray" TextChanged="OnSearchTextChanged"/>
                 </Frame>
 
                 <!-- Add Sale Card -->
