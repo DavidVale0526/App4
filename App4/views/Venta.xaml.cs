@@ -20,7 +20,7 @@ public partial class Venta : ContentPage
         firebaseClient = new FirebaseClient(firebaseURL);
         salesList = new ObservableCollection<Sales>();
         allSalesList = new ObservableCollection<Sales>();
-        salesCollectionView.ItemsSource = salesList; // Asegúrate de que esto esté configurado
+        salesCollectionView.ItemsSource = salesList; // Asegï¿½rate de que esto estï¿½ configurado
     }
 
     protected override async void OnAppearing()
@@ -54,32 +54,37 @@ public partial class Venta : ContentPage
 
     public async void OnVentasTapped(object sender, EventArgs e)
     {
-        // Navegar a la página de Ventas
+          if (Navigation.NavigationStack.LastOrDefault() is Venta)
+    {
+        return;
+    }
+        
+        // Navegar a la pï¿½gina de Ventas
         await Navigation.PushAsync(new Venta());
     }
 
     public async void OnClientesTapped(object sender, EventArgs e)
     {
-        // Navegar a la página de Clientes
+        // Navegar a la pï¿½gina de Clientes
         await Navigation.PushAsync(new Cliente());
     }
 
     public async void OnProveedoresTapped(object sender, EventArgs e)
     {
-        // Navegar a la página de Proveedores
+        // Navegar a la pï¿½gina de Proveedores
         await Navigation.PushAsync(new Proveedor());
     }
 
     public async void OnConfiguracionTapped(object sender, EventArgs e)
     {
-        // Navegar a la página de Configuración
+        // Navegar a la pï¿½gina de Configuraciï¿½n
         await Navigation.PushAsync(new Configuracion());
     }
 
     private async void OnSaleTapped(object sender, EventArgs e)
     {
         var sale = (Sales)((TappedEventArgs)e).Parameter; // Obtener la venta seleccionada
-        await Navigation.PushAsync(new EditarVenta(sale)); // Navegar a la página de edición
+        await Navigation.PushAsync(new EditarVenta(sale)); // Navegar a la pï¿½gina de ediciï¿½n
     }
 
     //metodos para buscar ventas
@@ -97,7 +102,7 @@ public partial class Venta : ContentPage
         // Cargar todas las ventas desde Firebase
         LoadSales().ContinueWith(task =>
         {
-            // Filtrar las ventas según el texto de búsqueda
+            // Filtrar las ventas segï¿½n el texto de bï¿½squeda
             var filteredSales = salesList.Where(sale => sale.NombreProducto.ToLower().Contains(searchText)).ToList();
 
             // Limpiar la lista y agregar las ventas filtradas

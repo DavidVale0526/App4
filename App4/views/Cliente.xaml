@@ -17,7 +17,12 @@
                 </StackLayout>
                 <Image Grid.Column="1" Source="cliente_icon.png" WidthRequest="50" HeightRequest="50"/>
             </Grid>
+
+            
         </Frame>
+
+        
+        
 
         <Button Text="Agregar Cliente" BackgroundColor="#8A2BE2" TextColor="White" CornerRadius="5" Clicked="OnAgregarClienteClicked"/>
     </StackLayout>

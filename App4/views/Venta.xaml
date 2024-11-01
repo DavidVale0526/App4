@@ -10,15 +10,14 @@
         <!-- Header -->
         <StackLayout Grid.Row="0" Orientation="Horizontal" Padding="20,40,20,20">
             <Label Text="Hello!" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
-            <Image Source="configuracion.png" HorizontalOptions="EndAndExpand" WidthRequest="24" HeightRequest="24"/>
-        </StackLayout>
+             </StackLayout>
 
         <!-- Main Content -->
         <ScrollView Grid.Row="1">
             <StackLayout Padding="20,0,20,20" Spacing="20">
                 <!-- Search Bar -->
                 <Frame CornerRadius="10" Padding="15,0" BackgroundColor="#F5F5F5">
-                    <Entry Placeholder="Buscar venta" PlaceholderColor="Gray" TextChanged="OnSearchTextChanged"/>
+                    <Entry Placeholder="Buscar venta" PlaceholderColor="Gray" TextChanged="OnSearchTextChanged" TextColor="Black"/>
                 </Frame>
 
                 <!-- Add Sale Card -->
